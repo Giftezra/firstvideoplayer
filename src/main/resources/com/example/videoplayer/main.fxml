@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.videoplayer.MainController">
+   <center>
+      <VBox fx:id="mediaContainer" spacing="10.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label fx:id="headerLabel" text="Enigma Video player" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <left>
+      <ListView fx:id="listView" BorderPane.alignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+   </left>
+   <bottom>
+      <VBox fx:id="contentContainer" alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ProgressBar fx:id="progressBar" progress="0.0" VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" spacing="40.0">
+               <children>
+                  <Button fx:id="playPauseButton" mnemonicParsing="false" text="Play|Pause" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="10.0" left="7.0" right="7.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="stopButton" layoutX="276.0" layoutY="42.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="66.0" text="Stop" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="10.0" left="7.0" right="7.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="nextButton" layoutX="236.0" layoutY="42.0" mnemonicParsing="false" onAction="#nextVideo" prefHeight="37.0" prefWidth="56.0" text="Next" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="10.0" left="7.0" right="7.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="previousButton" layoutX="291.0" layoutY="42.0" mnemonicParsing="false" onAction="#previousSong" text="Previous" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="10.0" left="7.0" right="7.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
